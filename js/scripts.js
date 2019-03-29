@@ -47,6 +47,8 @@ $(".btn").click(function() {
    $("#java").fadeOut();
    $("#css").fadeOut();
    $("#c-sharp").fadeOut();
+   $(".well").fadeOut();
+   $(".btn").fadeOut();
 });
 
 $(".btn1").click(function(){
