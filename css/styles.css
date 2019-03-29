@@ -16,3 +16,11 @@
   display: none;
   background-color: #d88629;
 }
+
+.match {
+  display:none;
+}
+#header{
+  border: 10px solid #71b570;
+  width: 250px;
+}
