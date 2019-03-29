@@ -3,37 +3,37 @@
 var aCorb = 0;
 var bCorb = 0;
 var cCorb = 0;
-var answerOne = $("input:radio[name=question1]:checked").val();
-var answerTwo = $("input:radio[name=question2]:checked").val();
-var answerTh = $("input:radio[name=question3]:checked").val();
-var answerF = $("input:radio[name=question4]:checked").val();
-var answerFive = $("input:radio[name=question5]:checked").val();
 
-  if (answerOne === "a" || answerTwo === "a" || answerTh === "a" || answerF === "a" || answerFive === "a"){
-    aCorb= aCorb +1;
-}
-if (answerOne === "b" || answerTwo === "b" || answerTh === "b" || answerF === "b" || answerFive === "b"){
-  bCorb= bCorb +1;
-}
 
-if (answerOne === "c" || answerTwo === "c" || answerTh === "c" || answerF === "c" || answerFive === "c"){
-  cCorb= cCorb +1;
-}
+
 
 var checkCourse = function(aCorb,bCorb,cCorb){
+
 var course;
  if (aCorb >= bCorb && aCorb >= cCorb){
   course = "aury";
-}
- if (bCorb >= aCorb && bCorb >= cCorb){
+}else if (bCorb >= aCorb || bCorb >= cCorb){
   course = "bury";
-}
-if (cCorb >= aCorb && cCorb >= bCorb){
+}else {
   course = "cury";
  }
  return course;
 };
 
+
+function newVal(answer){
+  if (answer === "a"){
+    aCorb += 1;
+  }
+  if (answer === "b"){
+    bCorb += 1;
+  }
+  if (answer === "c"){
+    cCorb += 1;
+  }
+
+
+};
 
 
 
@@ -42,10 +42,35 @@ $(document).ready(function() {
 $(".btn").click(function() {
 
    $(".test").fadeIn();
-   $(".tracks").fadeOut();
+   $("#ruby").fadeOut();
+   $("#php").fadeOut();
+   $("#java").fadeOut();
+   $("#css").fadeOut();
+   $("#c-sharp").fadeOut();
 });
 
 $(".btn1").click(function(){
+  var answerOne = $("input:radio[name=question1]:checked").val();
+  var answerTwo = $("input:radio[name=question2]:checked").val();
+  var answerTh = $("input:radio[name=question3]:checked").val();
+  var answerF = $("input:radio[name=question4]:checked").val();
+  var answerFive = $("input:radio[name=question5]:checked").val();
+
+newVal (answerOne);
+newVal (answerTwo);
+newVal (answerTh);
+newVal (answerF);
+newVal (answerFive);
+//   if (answerOne === "a" && answerTwo === "a" && answerTh === "a" && answerF === "a" && answerFive === "a"){
+//     aCorb= aCorb +1;
+// }
+// if (answerOne === "b" && answerTwo === "b" && answerTh === "b" && answerF === "b" && answerFive === "b"){
+//   bCorb= bCorb +1;
+// }
+//
+// if (answerOne === "c" && answerTwo === "c" && answerTh === "c" && answerF === "c" && answerFive === "c"){
+//   cCorb= cCorb +1;
+// }
 // var question1 = $("input:radio[name=question1]:checked").val();
 //   // $("#answer1").text(question1);
 //   // $("#answer1").show();
@@ -63,8 +88,11 @@ $(".btn1").click(function(){
 //           // $("#answer5").show();
 // $("#answer1").text("Your coourse is" + checkCourse (aAnswer,bAnswer,cAnswer) + "!");
 // $("#answer1").show();
-$('#answer1').text(' Your cours ' + checkCourse (aCorb,bCorb,cCorb) + '!');
-$('#answer1').show();
+if(checkCourse (aCorb,bCorb,cCorb) === "aury"){
+$('.test').fadeOut();
+$('#ruby').fadeIn();
+$('#c1').fadeIn();
+}
 
 });
 });

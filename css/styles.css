@@ -1,5 +1,15 @@
-.test {
+.test{
   display: none;
+}
+
+.btn {
+  background-color: #c64427;
+  width: 200px;
+  height: 90px;
+}
+
+.jumbotron {
+  text-align: center;
 }
 
 #answer1{
