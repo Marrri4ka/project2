@@ -12,22 +12,7 @@
   text-align: center;
 }
 
-#answer1{
+#btn2{
   display: none;
-}
-
-#answer2{
-  display: none;
-}
-
-#answer3{
-  display: none;
-}
-
-#answer4{
-  display: none;
-}
-
-#answer5{
-  display: none;
+  background-color: #d88629;
 }

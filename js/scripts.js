@@ -11,11 +11,11 @@ var checkCourse = function(aCorb,bCorb,cCorb){
 
 var course;
  if (aCorb >= bCorb && aCorb >= cCorb){
-  course = "aury";
+  course = "Ruby";
 }else if (bCorb >= aCorb || bCorb >= cCorb){
-  course = "bury";
+  course = "Css";
 }else {
-  course = "cury";
+  course = "Python";
  }
  return course;
 };
@@ -52,6 +52,7 @@ $(".btn").click(function() {
 });
 
 $(".btn1").click(function(){
+
   var answerOne = $("input:radio[name=question1]:checked").val();
   var answerTwo = $("input:radio[name=question2]:checked").val();
   var answerTh = $("input:radio[name=question3]:checked").val();
@@ -90,11 +91,45 @@ newVal (answerFive);
 //           // $("#answer5").show();
 // $("#answer1").text("Your coourse is" + checkCourse (aAnswer,bAnswer,cAnswer) + "!");
 // $("#answer1").show();
-if(checkCourse (aCorb,bCorb,cCorb) === "aury"){
+if(checkCourse (aCorb,bCorb,cCorb) === "Python"){
 $('.test').fadeOut();
-$('#ruby').fadeIn();
-$('#c1').fadeIn();
+$("#java").fadeIn();
+$("#css").fadeIn();
+$("#c-sharp").fadeIn();
+$("#btn2").fadeIn();
+
 }
+
+if(checkCourse (aCorb,bCorb,cCorb) === "Ruby"){
+$('.test').fadeOut();
+$("#java").fadeIn();
+$("#ruby").fadeIn();
+$("#php").fadeIn();
+$("#btn2").fadeIn();
+
+}
+
+if(checkCourse (aCorb,bCorb,cCorb) === "Css"){
+$('.test').fadeOut();
+$("#java").fadeIn();
+$("#css").fadeIn();
+$("#ruby").fadeIn();
+$("#btn2").fadeIn();
+
+}
+$("#btn2").click(function(){
+  $("#btn2").fadeOut();
+  $(".btn1").fadeIn();
+  $("#ruby").fadeOut();
+  $("#php").fadeOut();
+  $("#java").fadeOut();
+  $("#css").fadeOut();
+  $("#c-sharp").fadeOut();
+  $(".well").fadeOut();
+  $(".btn").fadeOut();
+  $(".test").show();
+});
+
 
 });
 });
